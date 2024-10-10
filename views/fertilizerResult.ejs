@@ -10,11 +10,13 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom CSS -->
   <style>
-    body, html {
+    body,
+    html {
       margin: 0;
       height: 100%;
       font-family: 'Roboto', sans-serif;
-      background: white; /* Light blue background */
+      background: white;
+      /* Light blue background */
     }
 
     .container {
@@ -49,7 +51,8 @@
     }
 
     .data-item {
-      background: #f0f4c3; /* Light greenish background */
+      background: #f0f4c3;
+      /* Light greenish background */
       border-radius: 10px;
       padding: 20px;
       text-align: center;
@@ -96,61 +99,95 @@
       color: #0288d1;
       padding: 2rem;
     }
+    .head-item{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: auto;
+    }
+    .relative{
+      position: relative;
+      bottom: 15px;
+    }
   </style>
 </head>
 
 <body>
   <div class="container">
     <div class="result-card">
-      <h1>Fertilizer Recommendation</h1>
-      <a href="/" style="text-decoration: none; color: white;">Home</a>
-      <a href="/find-fertilizer" style="text-decoration: none; color: white;" >Get fertilizer</a>
-      
+      <div class="head-item">
+        <h1>Fertilizer Recommendation</h1>
+      <span class="relative"><button style="border-radius: 30px; background-color: rgba(255, 255, 255, 0.533); margin: 10px;"><a href="/"
+            style="text-decoration: none; color: black;">Home</a></button>
+        <button style="border-radius: 30px; background-color: rgba(255, 255, 255, 0.376); margin: 10px;"><a
+            href="/find-fertilizer" style="text-decoration: none; color: black;">Get fertilizer</a></button>
+        </span>
+      </div>
       <!-- Grid Container for Data Items -->
       <% if (crop) { %>
         <div class="data-grid">
           <div class="data-item">
             <strong>Temperature</strong>
-            <span><%= crop.Temperature %>°C</span>
+            <span>
+              <%= crop.Temperature %>°C
+            </span>
           </div>
           <div class="data-item">
             <strong>Humidity</strong>
-            <span><%= crop.Humidity %>%</span>
+            <span>
+              <%= crop.Humidity %>%
+            </span>
           </div>
           <div class="data-item">
             <strong>Moisture</strong>
-            <span><%= crop.Moisture %>%</span>
+            <span>
+              <%= crop.Moisture %>%
+            </span>
           </div>
           <div class="data-item">
             <strong>Soil Type</strong>
-            <span><%= crop.Soil_Type %></span>
+            <span>
+              <%= crop.Soil_Type %>
+            </span>
           </div>
           <div class="data-item">
             <strong>Crop Type</strong>
-            <span><%= crop.Crop_Type %></span>
+            <span>
+              <%= crop.Crop_Type %>
+            </span>
           </div>
           <div class="data-item">
             <strong>Nitrogen Level</strong>
-            <span><%= crop.Nitrogen %></span>
+            <span>
+              <%= crop.Nitrogen %>
+            </span>
           </div>
           <div class="data-item">
             <strong>Potassium Level</strong>
-            <span><%= crop.Potassium %></span>
+            <span>
+              <%= crop.Potassium %>
+            </span>
           </div>
           <div class="data-item">
             <strong>Phosphorous Level</strong>
-            <span><%= crop.Phosphorous %></span>
+            <span>
+              <%= crop.Phosphorous %>
+            </span>
           </div>
           <div class="data-item" style="background-color: #91c8e6; width: 100%;">
             <strong>Recommended Fertilizer</strong>
-            <span><%= crop.Fertilizer %></span>
+            <span>
+              <%= crop.Fertilizer %>
+            </span>
           </div>
         </div>
-      <% } else { %>
-        <div class="empty-message">
-          <p><%= message %></p>
-        </div>
-      <% } %>
+        <% } else { %>
+          <div class="empty-message">
+            <p>
+              <%= message %>
+            </p>
+          </div>
+          <% } %>
     </div>
   </div>
 
