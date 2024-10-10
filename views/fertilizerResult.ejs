@@ -1,0 +1,161 @@
+<!-- views/fertilizerResult.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fertilizer Recommendation</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <style>
+    body, html {
+      margin: 0;
+      height: 100%;
+      font-family: 'Roboto', sans-serif;
+      background: white; /* Light blue background */
+    }
+
+    .container {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 40px;
+    }
+
+    .result-card {
+      background: #ffffff;
+      border-radius: 15px;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+      max-width: 1000px;
+      width: 100%;
+      padding: 30px;
+      margin-top: 20px;
+    }
+
+    .result-card h1 {
+      font-size: 2rem;
+      color: #0277bd;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .data-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .data-item {
+      background: #f0f4c3; /* Light greenish background */
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .data-item:hover {
+      background: #c5e1a5;
+      box-shadow: 0 6px 20px rgba(102, 187, 106, 0.3);
+    }
+
+    .data-item strong {
+      display: block;
+      font-size: 1.25rem;
+      color: #0288d1;
+      margin-bottom: 10px;
+    }
+
+    .data-item span {
+      font-size: 1.1rem;
+      color: #37474f;
+    }
+
+    .btn {
+      display: block;
+      margin: 30px auto 0;
+      padding: 12px 30px;
+      border-radius: 30px;
+      background-color: #0288d1;
+      color: white;
+      border: none;
+      font-size: 1rem;
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #0277bd;
+      box-shadow: 0 6px 15px rgba(2, 119, 189, 0.4);
+    }
+
+    .empty-message {
+      text-align: center;
+      font-size: 1.2rem;
+      color: #0288d1;
+      padding: 2rem;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="result-card">
+      <h1>Fertilizer Recommendation</h1>
+      <a href="/" style="text-decoration: none; color: white;">Home</a>
+      <a href="/find-fertilizer" style="text-decoration: none; color: white;" >Get fertilizer</a>
+      
+      <!-- Grid Container for Data Items -->
+      <% if (crop) { %>
+        <div class="data-grid">
+          <div class="data-item">
+            <strong>Temperature</strong>
+            <span><%= crop.Temperature %>°C</span>
+          </div>
+          <div class="data-item">
+            <strong>Humidity</strong>
+            <span><%= crop.Humidity %>%</span>
+          </div>
+          <div class="data-item">
+            <strong>Moisture</strong>
+            <span><%= crop.Moisture %>%</span>
+          </div>
+          <div class="data-item">
+            <strong>Soil Type</strong>
+            <span><%= crop.Soil_Type %></span>
+          </div>
+          <div class="data-item">
+            <strong>Crop Type</strong>
+            <span><%= crop.Crop_Type %></span>
+          </div>
+          <div class="data-item">
+            <strong>Nitrogen Level</strong>
+            <span><%= crop.Nitrogen %></span>
+          </div>
+          <div class="data-item">
+            <strong>Potassium Level</strong>
+            <span><%= crop.Potassium %></span>
+          </div>
+          <div class="data-item">
+            <strong>Phosphorous Level</strong>
+            <span><%= crop.Phosphorous %></span>
+          </div>
+          <div class="data-item" style="background-color: #91c8e6; width: 100%;">
+            <strong>Recommended Fertilizer</strong>
+            <span><%= crop.Fertilizer %></span>
+          </div>
+        </div>
+      <% } else { %>
+        <div class="empty-message">
+          <p><%= message %></p>
+        </div>
+      <% } %>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS and dependencies (Optional) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Minimalistic Blue Themed Signup Page using Bootstrap">
+  <meta name="keywords" content="HTML, CSS, JavaScript, Bootstrap, Signup, Blue Theme, Modern">
+  <meta name="author" content="Your Name">
+  <title>Signup</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <style>
+    body, html {
+      height: 100%;
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #f0f8ff;
+    }
+
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      
+    }
+
+    .card {
+      border: none;
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-left {
+      background: linear-gradient(120deg, #4b79a1, #283e51);
+      padding: 50px;
+      color: white;
+    }
+
+    .card-left h1 {
+      font-size: 2.5rem;
+    }
+
+    .card-left p {
+      margin-top: 10px;
+      font-size: 1.1rem;
+    }
+
+    .card-right {
+      padding: 50px;
+    }
+
+    .form-control {
+      border-radius: 25px;
+      height: 50px;
+      padding-left: 20px;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .form-control:focus {
+      border-color: #4b79a1;
+      box-shadow: 0px 0px 8px rgba(75, 121, 161, 0.5);
+    }
+
+    .btn-primary {
+      background-color: #4b79a1;
+      border: none;
+      border-radius: 25px;
+      padding: 15px 20px;
+      font-size: 18px;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      background-color: #283e51;
+    }
+
+    .text-muted a {
+      color: #4b79a1;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .text-muted a:hover {
+      color: #283e51;
+    }
+
+    /* Optional: Add slight hover effect to form fields */
+    .form-control:hover {
+      background-color: #f0f8ff;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="card shadow-lg">
+      <div class="row g-0">
+        <!-- Left Banner Section -->
+        <div class="col-lg-6 d-none d-lg-flex card-left align-items-center justify-content-center">
+          <div>
+            <h1>Welcome to KisanSarthi!</h1>
+            <p>Join us and start your journey with a brand new account.</p>
+          </div>
+        </div>
+        <!-- Signup Form Section -->
+        <div class="col-lg-6 card-right">
+          <h2 class="text-center mb-4">Create Your Account</h2>
+          <form action="/user/signup" method="post">
+            <div class="mb-3">
+              <label for="username" class="form-label">Fullname</label>
+              <input type="text" class="form-control" id="fullName" placeholder="Aditya jaiswal"
+              name="fullName">
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email Address</label>
+              <input type="email" class="form-control" id="email" placeholder="example@domain.com" name="email">
+            </div>
+            <div class="mb-3">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" class="form-control" id="password" placeholder="********" 
+              name="password">
+            </div>
+            <div class="d-grid mb-3">
+              <button type="submit" class="btn btn-primary btn-block">Sign Up</button>
+            </div>
+          </form>
+          <div class="text-center text-muted">
+            Already have an account? <a href="/user/signin">Login</a>
+          </div>
+          <div class="text-center text-muted">
+            Dont' want to create account? <a href="/">Home</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS and dependencies (Optional) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
