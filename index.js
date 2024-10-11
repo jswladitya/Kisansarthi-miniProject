@@ -43,4 +43,4 @@ app.use('/', cropRoute);
 //user route
 app.use("/user", userRoute);
 
-app.listen(PORT, () => console.log(`Server Started at PORT:${PORT}`));
+app.listen(PORT, () => console.log(`Server Started at http://localhost:8001`));
